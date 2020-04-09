@@ -1,0 +1,35 @@
+{
+    "name": "eastern-enterprise/salary-dates-calculator",
+    "type": "project",
+    "description": "It helps to find salary payable dates for each month",
+    "authors": [
+        {
+            "name": "Bhushan Gaykawad",
+            "email": "b.gaykawad@easternenterprise.com"
+        }
+    ],
+    "keywords": [
+        "Salary",
+        "Dates",
+        "Calculator"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EE\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
