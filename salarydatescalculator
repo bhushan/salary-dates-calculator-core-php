@@ -1,0 +1,18 @@
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use EE\Services\CsvLoggerService;
+use EE\Services\SalaryDateCalculatorService;
+use EE\Controllers\SalaryDateCalculatorController;
+
+if (!isset($argv[1])) {
+    die("File Name is required, run -> php salarydatescalculator filename\n");
+}
+
+$salaryDates = new SalaryDateCalculatorController(
+    new SalaryDateCalculatorService(),
+    new CsvLoggerService()
+);
+
+$salaryDates->generate($argv[1]);
