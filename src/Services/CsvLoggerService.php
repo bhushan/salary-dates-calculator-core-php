@@ -39,6 +39,10 @@ class CsvLoggerService implements LoggerInterface
 
         $filePath = sprintf(self::FILEPATH, $filename);
 
+        if (!file_exists(dirname($filePath))) {
+            mkdir(dirname($filePath), 0777, true);
+        }
+
         file_put_contents($filePath, $content);
     }
 }
