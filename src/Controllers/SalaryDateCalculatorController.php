@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EE\Controllers;
 
@@ -32,7 +32,7 @@ class SalaryDateCalculatorController
      *
      * @return void
      */
-    public function __construct( SalaryDateCalculatorInterface $service, LoggerInterface $logger )
+    public function __construct(SalaryDateCalculatorInterface $service, LoggerInterface $logger)
     {
         $this->service = $service;
         $this->logger = $logger;
@@ -45,7 +45,7 @@ class SalaryDateCalculatorController
      *
      * @return void
      */
-    public function generate( string $filename ): void
+    public function generate(string $filename): void
     {
         $data = $this->service->getData();
 

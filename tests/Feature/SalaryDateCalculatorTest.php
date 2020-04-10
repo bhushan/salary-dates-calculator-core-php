@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -38,11 +38,11 @@ class SalaryDateCalculatorTest extends TestCase
     {
         parent::setUp();
 
-        $m = Mockery::mock(SalaryDateCalculatorInterface::class);
+        $salaryDateCalculatorMock = Mockery::mock(SalaryDateCalculatorInterface::class);
 
-        $m->shouldReceive('getData')->once()->andReturn($this->dummyData());
+        $salaryDateCalculatorMock->shouldReceive('getData')->once()->andReturn($this->dummyData());
 
-        $this->salaryDate = new SalaryDateCalculatorController($m, new CsvLoggerService());
+        $this->salaryDate = new SalaryDateCalculatorController($salaryDateCalculatorMock, new CsvLoggerService());
     }
 
     /**

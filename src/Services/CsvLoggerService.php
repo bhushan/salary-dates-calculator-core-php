@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EE\Services;
 
@@ -29,11 +29,11 @@ class CsvLoggerService implements LoggerInterface
      *
      * @return void
      */
-    public function output( array $data, string $filename ): void
+    public function output(array $data, string $filename): void
     {
         $content = '';
 
-        foreach ( $data as $row ) {
+        foreach ($data as $row) {
             $content .= implode(',', $row) . "\n";
         }
 

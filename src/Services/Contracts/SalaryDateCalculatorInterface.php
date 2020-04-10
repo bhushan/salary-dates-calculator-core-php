@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EE\Services\Contracts;
 

@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EE\Services\Contracts;
 
@@ -20,5 +20,5 @@ interface LoggerInterface
      *
      * @return void
      */
-    public function output( array $data, string $filename ): void;
+    public function output(array $data, string $filename): void;
 }

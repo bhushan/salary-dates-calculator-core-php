@@ -6,7 +6,7 @@
  * @author Bhushan Gaykawad <b.gaykawad@easternenterprise.com>
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EE\Services;
 
@@ -24,7 +24,7 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
     {
         $data[] = $this->addColumns();
 
-        for ( $month = date('m'); $month <= 12; $month++ ) {
+        for ($month = date('m'); $month <= 12; $month++) {
             $date = DateTime::createFromFormat('d-m', "01-{$month}");
             $data[$month][0] = $date->format('F');
             $data[$month][1] = $this->getPaymentDate($date);
@@ -51,9 +51,9 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return string
      */
-    public function getPaymentDate( DateTime $date ): string
+    public function getPaymentDate(DateTime $date): string
     {
-        if ( $this->isWeekend($this->getLastDayOfMonth($date)) ) {
+        if ($this->isWeekend($this->getLastDayOfMonth($date))) {
             return $this->getLastFridayOfMonth($date)->format('d-M-Y');
         }
 
@@ -67,11 +67,11 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return string
      */
-    public function getBonusPaymentDate( DateTime $date ): string
+    public function getBonusPaymentDate(DateTime $date): string
     {
         $fifteenthDate = date_create("{$date->format('Y')}-{$date->format('M')}-15");
 
-        if ( $this->isWeekend($fifteenthDate) ) {
+        if ($this->isWeekend($fifteenthDate)) {
             return $this->getNextWednesday($fifteenthDate)->format('d-M-Y');
         }
 
@@ -85,7 +85,7 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return DateTime
      */
-    private function getLastDayOfMonth( DateTime $date ): DateTime
+    private function getLastDayOfMonth(DateTime $date): DateTime
     {
         return $date->modify('last day of this month');
     }
@@ -97,7 +97,7 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return bool
      */
-    private function isWeekend( DateTime $date ): bool
+    private function isWeekend(DateTime $date): bool
     {
         return $date->format('N') >= 6;
     }
@@ -109,7 +109,7 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return DateTime
      */
-    private function getLastFridayOfMonth( DateTime $date ): DateTime
+    private function getLastFridayOfMonth(DateTime $date): DateTime
     {
         return $date->modify('last Friday of this month');
     }
@@ -121,7 +121,7 @@ class SalaryDateCalculatorService implements SalaryDateCalculatorInterface
      *
      * @return DateTime
      */
-    private function getNextWednesday( DateTime $date ): DateTime
+    private function getNextWednesday(DateTime $date): DateTime
     {
         return $date->modify('next Wednesday');
     }
